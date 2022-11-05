@@ -1,16 +1,10 @@
 def toEnglish(s):
+    if "-" not in s:
+        return s
     sentence = s.split(" ")
     english = ""
     for word in sentence:
-        if word[:len(word) - 4:-1] == 'yaw':
-            english += word[:len(word) - 3] + " "
-        else: 
-            noay = word[:len(word) - 2]
-            firstconsonants = noay.split("a")[-1]
-            print(noay)
-            consonantsremoved = noay[:len(noay) - (len(firstconsonants)+1)]
-            print((len(firstconsonants)+1))
-            english += firstconsonants[-1] + consonantsremoved + " "
+        trans = word.split("-")
+        noay =  trans[1]
+        english += noay[:len(noay) - 2]+ str(trans[0])
     return english.lower()
-
-print(toEnglish("Avehay away icenay ayday"))
