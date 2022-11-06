@@ -5,3 +5,4 @@ A little exercise to create a Python package, build it, test it, distribute it, 
 
 ## Group members
 - [Maaz Ahmed](https://github.com/maazahmedd)
+- [Ankit Jain](https://github.com/ankit181818)
