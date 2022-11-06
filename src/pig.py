@@ -10,8 +10,37 @@ def toEnglish(sentence):
 
 
 
-def toPL(s):
-    return
+def toPL(s, intermediate_output_flag = True):
+    # Our rules for pig latin:
+    #Take away the first letter of a word, then add a new word that uses the first letter of the word with "ay" added to it e.g., hello becomes ello-hay
+    #For words that start with a vowel, you add "ay" to the end of the word e.g., enter becomes enter-ay
+    #For words that start with a consonant, all letters are removed until a vowel is reached and then all removed consonants are used to create a second word, with "ay" added to the end of it e.g., happy becomes appy-hay    
+    pl = ""
+    pl_word = ""
+    hy = ""
+    vowels = "aeiouyAEIOUY"
+
+    if intermediate_output_flag:  #Flag to hyphenate pig latin words, makes it easier to check the english --> pl and back translation functions
+        hy = "-"
+
+    for w in s:
+        if len(w) > 0:
+            if w[0] in vowels:  #check if the first letter is a vowel
+                pl_word = w + hy + "ay"  #if we're looking for intermediate output, this will add a hyphen here
+                pl += pl_word + " "
+            else:  #starts with a consonant   
+
+                consonants = ""
+                while len(w) > 0:
+                    if not(w[0] in vowels):
+                        consonants = consonants + w[0]
+                        w = w[1:]
+                    else:
+                        break
+                
+                pl_word = w + hy + consonants + "ay"
+                pl += pl_word + " "
+    return pl
 
 
 
@@ -36,10 +65,19 @@ def process_input(s, translation_flag):
             print("Every Pig Latin word needs a hyphen, so we can translate it effectively")
             return []
         else:
+            s = s.strip()
             return s.split(" ")
     elif translation_flag.lower() == "p": # "p" means "translate to pig latin"
+        s = s.strip()
         return s.split(" ")
     
     else:
         print("Invalid translation flag entered: ", translation_flag)
         return []
+
+s = process_input("Hello my name is bobert and i hate this class", "p")
+pl = toPL(s)
+print(toPL(s))
+s2 = process_input(pl, "e")
+print(s2)
+print(toEnglish(s2))
