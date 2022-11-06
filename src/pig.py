@@ -74,10 +74,3 @@ def process_input(s, translation_flag):
     else:
         print("Invalid translation flag entered: ", translation_flag)
         return []
-
-s = process_input("Hello my name is bobert and i hate this class", "p")
-pl = toPL(s)
-print(toPL(s))
-s2 = process_input(pl, "e")
-print(s2)
-print(toEnglish(s2))
