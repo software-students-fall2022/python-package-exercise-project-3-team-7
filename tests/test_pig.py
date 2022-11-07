@@ -1,5 +1,7 @@
 import pytest
-from src import pig
+import sys
+sys.path.append('../src')
+from piglatin import pig
 
 class Tests:
     #Unit tests for toEnglish()
