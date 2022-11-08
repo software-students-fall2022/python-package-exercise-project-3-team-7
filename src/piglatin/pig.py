@@ -59,13 +59,13 @@ def process_input(s, translation_flag):
         if punc != "-":
             s = s.replace(punc, '') #remove all punctation except the hyphens, helps w edge cases
 
-    if len(s) < 1:
+    if len(s) < 1 or s == '':
         print("There's nothing to translate from your message: ", s)
         return [] #helps us avoid the case where someone just submitted all punctuation
     
     #a flag for deciding if we're translating english --> latin or vice versa
     if translation_flag.lower() == "e": #I've decided that "e" means "translate to english"
-        if "-" not in s:
+        if "-" not in list(s):
             print("Every Pig Latin word needs a hyphen, so we can translate it effectively")
             return []
         else:
