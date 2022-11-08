@@ -38,7 +38,7 @@ class Tests:
    
     def test_punc_input(self):
         expected = ["-"]
-        actual = pig.process_input(".,/,/,/,[][]][]!!!*-")
+        actual = pig.process_input(".,/,/,/,[][]][]!!!*-", "e")
 
         correct_flag = False
 
@@ -49,7 +49,7 @@ class Tests:
 
     def test_phrase_input(self):
         expected = ["hello", "my", "name", "is"]
-        actual = pig.process_input("hello my name is")
+        actual = pig.process_input("hello my name is", "p")
 
         correct_flag = True
 
