@@ -50,5 +50,5 @@ def print_pig():
 
 # speech_bubble("Hello, my name is Foo. I am a great person.")
 speech_bubble("")
-arrow_to_bubble()
-print_pig()
+# arrow_to_bubble()
+# print_pig()
