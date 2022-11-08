@@ -1,8 +1,8 @@
 import pytest
 import sys
-sys.path.append('../src')
-from piglatin import pig
-
+#sys.path.append('../src')
+#from piglatin import pig
+from src.piglatin import pig
 class Tests:
     #Unit tests for toEnglish()
     def test_engtopig(self):
@@ -10,6 +10,15 @@ class Tests:
         actual = pig.toEnglish('equal-ay')
         assert actual == expected, f"expected the test to yield equal, instead it yielded {actual}"
 
+    def test_phrase_eng(self):
+        expected = "hello my name is "
+        actual = pig.toEnglish("ello-hay y-may ame-nay is-ay ")
+        assert actual == expected, f"expected the test to yield equal, instead it yielded {actual}"
+
+    def test_consonant_eng(self):
+        expected = "characteristic "
+        actual = pig.toEnglish('aracteristic-chay')
+        assert actual == expected, f"expected the test to yield equal, instead it yielded {actual}"
     
     #Unit tests for toPL()
     def test_pl(self):

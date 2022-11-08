@@ -7,7 +7,7 @@ A little exercise to create a Python package, build it, test it, distribute it, 
 
 ## Group members
 - [Maaz Ahmed](https://github.com/maazahmedd)
-- [Hillary Davis]()
+- [Hillary Davis](https://github.com/hillarydavis1)
 - [Wuji Cao]()
 - [Ankit Jain](https://github.com/ankit181818)
 
