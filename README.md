@@ -9,5 +9,5 @@ A little exercise to create a Python package, build it, test it, distribute it, 
 - [Maaz Ahmed](https://github.com/maazahmedd)
 - [Hillary Davis](https://github.com/hillarydavis1)
 - [Wuji Cao]()
-- [Ankit]
+- [Ankit Jain](https://github.com/ankit181818)
 
