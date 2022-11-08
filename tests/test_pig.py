@@ -28,13 +28,14 @@ class Tests:
         assert actual == expected, f"expected the test to yield 'ellohay ymay amenay isay', instead it yielded {actual}"
 
     #Unit tests for process_input()
-    #def test_empty_input(self):
-     #   expected = []
-      #  actual = pig.process_input(" ", "e")
-      #  actual2 = pig.process_input(" ", "p")
-      #  assert actual == expected , f"(e flag) expected an empty list, instead produced {actual}"
-       # assert actual2 == expected, f"(p flag) expected an empty list, instead produced {actual2}"
-"""
+    
+    def test_empty_input(self):
+        expected = []
+        actual = pig.process_input(" ", "e")
+        actual2 = pig.process_input(" ", "p")
+        assert actual == expected , f"(e flag) expected an empty list, instead produced {actual}"
+        assert actual2 == expected, f"(p flag) expected an empty list, instead produced {actual2}"
+   
     def test_punc_input(self):
         expected = ["-"]
         actual = pig.process_input(".,/,/,/,[][]][]!!!*-")
@@ -44,4 +45,4 @@ class Tests:
         expected = ["hello", "my", "name", "is"]
         actual = pig.process_input("hello my name is")
         assert actual == expected
-"""
+
