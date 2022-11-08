@@ -62,7 +62,7 @@ class Tests:
         assert correct_flag == True
 
     def test_speech_bubble(self):
-        expected = "\n\n()\n"
+        expected = "\n()"
         actual = pig.speech_bubble("")
 
         assert actual == expected
