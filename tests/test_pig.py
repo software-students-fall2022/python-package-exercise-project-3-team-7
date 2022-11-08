@@ -10,7 +10,6 @@ class Tests:
         actual = pig.toEnglish('equal-ay')
         assert actual == expected, f"expected the test to yield equal, instead it yielded {actual}"
 
-    
     #Unit tests for toPL()
     def test_pl(self):
         expected = "equalay "
@@ -61,3 +60,13 @@ class Tests:
                     correct_flag = False
 
         assert correct_flag == True
+
+    def test_speech_bubble(self):
+        expected = ""
+        actual = pig.speech_bubble("")
+
+        assert actual == expected
+
+
+
+
