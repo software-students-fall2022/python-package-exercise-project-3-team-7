@@ -88,3 +88,15 @@ class Tests:
         actual = pig.speech_bubble("Hello, my name is Foo.")
 
         assert actual == expected
+
+    def test_arrow_to_bubble(self):
+        expected = "       \\\n        \\"
+        actual = pig.arrow_to_bubble()
+
+        assert actual == expected
+
+    def test_print_pig(self):
+        expected = "         <`--'\>______" + "\n" + "         /. .  `'     \\" + "\n" + "        (`')  ,        @" + "\n" + "         `-._,        /" + "\n" + "            )-)_/--( >" + "\n" + "           ''''  ''''" + "\n"
+        actual = pig.print_pig()
+
+        assert actual == expected
