@@ -1,6 +1,9 @@
 import string
 
-def toEnglish(sentence):
+def toEnglish(s):
+
+    sentence = process_input(s,"e")
+
     english = ""
     for word in sentence:
         trans = word.split("-")
@@ -11,6 +14,9 @@ def toEnglish(sentence):
 
 
 def toPL(s, intermediate_output_flag = True):
+
+    sentence = process_input(s,"p")
+
     # Our rules for pig latin:
     #Take away the first letter of a word, then add a new word that uses the first letter of the word with "ay" added to it e.g., hello becomes ello-hay
     #For words that start with a vowel, you add "ay" to the end of the word e.g., enter becomes enter-ay
@@ -23,7 +29,7 @@ def toPL(s, intermediate_output_flag = True):
     if intermediate_output_flag:  #Flag to hyphenate pig latin words, makes it easier to check the english --> pl and back translation functions
         hy = "-"
 
-    for w in s:
+    for w in sentence:
         if len(w) > 0:
             if w[0] in vowels:  #check if the first letter is a vowel
                 pl_word = w + hy + "ay"  #if we're looking for intermediate output, this will add a hyphen here
