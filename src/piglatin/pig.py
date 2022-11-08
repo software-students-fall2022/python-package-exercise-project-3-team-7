@@ -55,6 +55,8 @@ def toPL(s, intermediate_output_flag = True):
 #when we call this, we can make sure that it returns a list with something in it by checking the len()
 def process_input(s, translation_flag):
     
+    s = s.strip()
+
     for punc in string.punctuation:
         if punc != "-":
             s = s.replace(punc, '') #remove all punctation except the hyphens, helps w edge cases
