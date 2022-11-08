@@ -84,7 +84,7 @@ def process_input(s, translation_flag):
         return []
 
 def speech_bubble(message):
-    print()
+    result = "\n"
     words = message.split(" ")
     
     lines = []
@@ -112,21 +112,32 @@ def speech_bubble(message):
         if len(lines[i]) > max_lines:
             max_lines = len(lines[i])
 
-    print(" " + "-" * max_lines)
+    result += " " + "-" * max_lines + "\n"
     for i in range(len(lines)):
-        print("(" + lines[i] + " " * (max_lines - len(lines[i])) + ")")
-    print(" " + "-" * max_lines)
+        result += "(" + lines[i] + " " * (max_lines - len(lines[i])) + ")" + "\n"
+    result += " " + "-" * max_lines
+
+    return result
 
 def arrow_to_bubble():
-    print("       \\")
-    print("        \\")
+    result = "       \\\n"
+    result += "        \\"
+
+    return result
 
 def print_pig():
-    # print()
-    print("         <`--'\>______")
-    print("         /. .  `'     \\")
-    print("        (`')  ,        @")
-    print("         `-._,        /")
-    print("            )-)_/--( >")
-    print("           ''''  ''''")
-    print()
+    result = "         <`--'\>______" + "\n"
+    result += "         /. .  `'     \\" + "\n"
+    result += "        (`')  ,        @" + "\n"
+    result += "         `-._,        /" + "\n"
+    result += "            )-)_/--( >" + "\n"
+    result += "           ''''  ''''" + "\n"
+    return result
+
+
+def print_everything():
+    result = speech_bubble("Hello, my name is Foo. I am a great person.") + "\n"
+    result += arrow_to_bubble() + "\n"
+    result += print_pig()
+
+    return result

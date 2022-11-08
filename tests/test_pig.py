@@ -61,11 +61,28 @@ class Tests:
 
         assert correct_flag == True
 
-    def test_speech_bubble(self):
+    def test_speech_bubble_empty(self):
+        expected = "\n \n()\n "
+        actual = pig.speech_bubble("")
+
+        assert actual == expected
+
+    def test_speech_bubble_text(self):
         expected = "\n ---------------------------\n(Hello, my name is Foo. I am)\n(a great person.            )\n ---------------------------"
         actual = pig.speech_bubble("Hello, my name is Foo. I am a great person.")
 
         assert actual == expected
+
+    def test_speech_bubble_one_line(self):
+        expected = "\n ----------------------\n(Hello, my name is Foo.)\n ----------------------"
+        actual = pig.speech_bubble("Hello, my name is Foo.")
+
+        assert actual == expected
+
+
+
+
+
 
 
 
