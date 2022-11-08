@@ -1,13 +1,13 @@
 import pytest
 import sys
-sys.path.append('../src')
-from piglatin import pig
+#sys.path.append('../src')
+from src.piglatin import pig
 
 class Tests:
     #Unit tests for toEnglish()
     def test_engtopig(self):
         expected = "equal "
-        actual = pig.toEnglish(['equal-ay'])
+        actual = pig.toEnglish('equal-ay')
         assert actual == expected, f"expected the test to yield equal, instead it yielded {actual}"
 
     
