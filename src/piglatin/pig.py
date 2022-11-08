@@ -1,6 +1,9 @@
 import string
 
-def toEnglish(sentence):
+def toEnglish(s):
+
+    sentence = process_input(s,"e")
+
     english = ""
     for word in sentence:
         trans = word.split("-")
@@ -11,6 +14,9 @@ def toEnglish(sentence):
 
 
 def toPL(s, intermediate_output_flag = True):
+
+    sentence = process_input(s,"p")
+
     # Our rules for pig latin:
     #Take away the first letter of a word, then add a new word that uses the first letter of the word with "ay" added to it e.g., hello becomes ello-hay
     #For words that start with a vowel, you add "ay" to the end of the word e.g., enter becomes enter-ay
@@ -23,7 +29,7 @@ def toPL(s, intermediate_output_flag = True):
     if intermediate_output_flag:  #Flag to hyphenate pig latin words, makes it easier to check the english --> pl and back translation functions
         hy = "-"
 
-    for w in s:
+    for w in sentence:
         if len(w) > 0:
             if w[0] in vowels:  #check if the first letter is a vowel
                 pl_word = w + hy + "ay"  #if we're looking for intermediate output, this will add a hyphen here
@@ -51,17 +57,19 @@ def toPL(s, intermediate_output_flag = True):
 #when we call this, we can make sure that it returns a list with something in it by checking the len()
 def process_input(s, translation_flag):
     
+    s = s.strip()
+
     for punc in string.punctuation:
         if punc != "-":
             s = s.replace(punc, '') #remove all punctation except the hyphens, helps w edge cases
 
-    if len(s) < 1:
+    if len(s) < 1 or s == '':
         print("There's nothing to translate from your message: ", s)
         return [] #helps us avoid the case where someone just submitted all punctuation
     
     #a flag for deciding if we're translating english --> latin or vice versa
     if translation_flag.lower() == "e": #I've decided that "e" means "translate to english"
-        if "-" not in s:
+        if "-" not in list(s):
             print("Every Pig Latin word needs a hyphen, so we can translate it effectively")
             return []
         else:
