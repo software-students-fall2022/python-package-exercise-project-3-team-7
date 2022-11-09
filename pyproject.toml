@@ -4,10 +4,10 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "piglatin"
-description = "An example of a package developed with pyenv, built with build using setuptools, uploaded to PyPI using twine, and distributed via pip."
-version = "0.0.7"
+description = "This is a PigLatin Translator served with cute pigs"
+version = "1.0.0"
 authors = [
-  { name="team7", email="foo.barstein@onepotcooking.com" },
+  { name="team7", email="wc1629@nyu.edu" },
 ]
 license = { file = "LICENSE" }
 readme = "README.md"
