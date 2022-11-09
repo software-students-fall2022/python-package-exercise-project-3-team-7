@@ -71,32 +71,88 @@ class Tests:
 
         assert correct_flag == True
 
-    def test_speech_bubble_empty(self):
+    # unit tests for speech bubble
+
+    def test_speech_bubble_type_empty(self): # checking return type when an empty string is passed
+        actual = pig.speech_bubble("")
+        assert type(actual) is str
+
+    def test_speech_bubble_type_text(self): # checking return type when a populated string is passed
+        actual = pig.speech_bubble("Hello, my name is Foo. I am a great person.")
+        assert type(actual) is str
+
+    def test_speech_bubble_empty(self): # testing output with empty string
         expected = "\n \n()\n "
         actual = pig.speech_bubble("")
 
         assert actual == expected
 
-    def test_speech_bubble_text(self):
+    def test_speech_bubble_text(self): # testing output with populated multiline string
         expected = "\n ---------------------------\n(Hello, my name is Foo. I am)\n(a great person.            )\n ---------------------------"
         actual = pig.speech_bubble("Hello, my name is Foo. I am a great person.")
 
         assert actual == expected
 
-    def test_speech_bubble_one_line(self):
+    def test_speech_bubble_one_line(self): # testing output with populated single line string
         expected = "\n ----------------------\n(Hello, my name is Foo.)\n ----------------------"
         actual = pig.speech_bubble("Hello, my name is Foo.")
 
         assert actual == expected
 
-    def test_arrow_to_bubble(self):
+    # unit tests for arrow_to_bubble
+
+    def test_arrow_to_bubble_type(self): # testing type of return for arrow_to_bubble
+        actual = pig.arrow_to_bubble()
+        assert type(actual) is str
+
+    def test_arrow_to_bubble_length(self): # testing length of string returned for arrow_to_bubble
+        actual = pig.arrow_to_bubble()
+        assert len(actual) == 18
+
+    def test_arrow_to_bubble(self): # testing arrow_to_bubble
         expected = "       \\\n        \\"
         actual = pig.arrow_to_bubble()
 
         assert actual == expected
 
-    def test_print_pig(self):
+    # unit tests for print_pig
+
+    def test_print_pig_type(self): # testing type of return for print_pig
+        actual = pig.print_pig()
+        assert type(actual) is str
+
+    def test_print_pig_length(self): # testing length of string returned for print_pig
+        actual = pig.print_pig()
+        assert len(actual) == 141
+
+    def test_print_pig(self): # testing print_pig
         expected = "         <`--'\>______" + "\n" + "         /. .  `'     \\" + "\n" + "        (`')  ,        @" + "\n" + "         `-._,        /" + "\n" + "            )-)_/--( >" + "\n" + "           ''''  ''''" + "\n"
         actual = pig.print_pig()
+
+        assert actual == expected
+
+    # unit tests for print_everythin
+
+    def test_print_everything_type(self): # testing type for print_everything function
+        actual = pig.print_everything("Hello, my name is Foo.")
+
+        assert type(actual) is str
+
+    # testing print_everything function
+    def test_print_everything_empty(self):
+        expected = "\n \n()\n " + "\n" + "       \\\n        \\" + "\n" + "         <`--'\>______" + "\n" + "         /. .  `'     \\" + "\n" + "        (`')  ,        @" + "\n" + "         `-._,        /" + "\n" + "            )-)_/--( >" + "\n" + "           ''''  ''''" + "\n"
+        actual = pig.print_everything("")
+
+        assert actual == expected
+
+    def test_print_everything_one_line(self):
+        expected = "\n ----------------------\n(Hello, my name is Foo.)\n ----------------------" + "\n" + "       \\\n        \\" + "\n" + "         <`--'\>______" + "\n" + "         /. .  `'     \\" + "\n" + "        (`')  ,        @" + "\n" + "         `-._,        /" + "\n" + "            )-)_/--( >" + "\n" + "           ''''  ''''" + "\n"
+        actual = pig.print_everything("Hello, my name is Foo.")
+
+        assert actual == expected
+
+    def test_print_everything_text(self):
+        expected = "\n ---------------------------\n(Hello, my name is Foo. I am)\n(a great person.            )\n ---------------------------" + "\n" + "       \\\n        \\" + "\n" + "         <`--'\>______" + "\n" + "         /. .  `'     \\" + "\n" + "        (`')  ,        @" + "\n" + "         `-._,        /" + "\n" + "            )-)_/--( >" + "\n" + "           ''''  ''''" + "\n"
+        actual = pig.print_everything("Hello, my name is Foo. I am a great person.")
 
         assert actual == expected
