@@ -1,4 +1,4 @@
-from piglatin import pig
+from piglatinTeam7 import pig
 
 def menu():
     """Prompt user menus """

@@ -2,7 +2,7 @@ import pytest
 import sys
 #sys.path.append('../src')
 #from piglatin import pig
-from src.piglatin import pig
+from src.piglatinTeam7 import pig
 class Tests:
     #Unit tests for toEnglish()
     def test_engtopig(self):

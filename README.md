@@ -51,10 +51,10 @@ We believe that the functions most useful to potential users are (with their use
  - print_pig
  - print_everything
 
-[PYPI](https://test.pypi.org/project/piglatin/1.0.3/)
+[PYPI](https://pypi.org/project/piglatinTeam7/1.0.3/)
 # How to install and use our package
 
-- Create a pipenv-managed virtual environment and install the latest version of your package installed：https://test.pypi.org/project/piglatin/1.0.3/ (Note that if you've previously created a pipenv virtual environment in the same directory, you may have to delete the old one first. Find out where it is located with the pipenv --venv command.)
+- Create a pipenv-managed virtual environment and install the latest version of your package installed：https://pypi.org/project/piglatinTeam7/1.0.3/ (Note that if you've previously created a pipenv virtual environment in the same directory, you may have to delete the old one first. Find out where it is located with the pipenv --venv command.)
 - Activate the virtual environment: pipenv shell.
 - Create a Python program file that imports your package and uses it, e.g. from piglatin import pig and then print(pig.toPL("Hello World")).
 - Run the program: python3 my_program_filename.py.
