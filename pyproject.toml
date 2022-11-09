@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "piglatin"
 description = "This is a PigLatin Translator served with cute pigs"
-version = "1.0.0"
+version = "1.0.3"
 authors = [
   { name="team7", email="wc1629@nyu.edu" },
 ]

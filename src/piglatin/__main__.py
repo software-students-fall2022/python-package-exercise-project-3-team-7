@@ -1,4 +1,4 @@
-import pig
+from piglatin import pig
 
 def menu():
     """Prompt user menus """
@@ -15,16 +15,12 @@ def main():
             word = ""
             word = input("Enter English word: ")
             word = pig.toPL(word, True)
-            pig.speech_bubble(word)
-            pig.arrow_to_bubble()
-            pig.print_pig()
+            print(pig.print_everything(word))
         elif choice == "2":
             word = ""
             word = input("Enter Pig Latin word (hyphenate the pig latin portion): ")
             p_word = pig.toEnglish(word)
-            pig.speech_bubble(p_word)
-            pig.arrow_to_bubble()
-            pig.print_pig()
+            print(pig.print_everything(p_word))
         elif choice == "3":
             print("Oodgay yebay!\n")
         else:
