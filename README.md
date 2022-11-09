@@ -51,12 +51,12 @@ We believe that the functions most useful to potential users are (with their use
  - print_pig
  - print_everything
 
-[PYPI](https://test.pypi.org/project/piglatin/1.0.3/)
+[PYPI](https://pypi.org/project/piglatinTeam7/1.0.3/)
 # How to install and use our package
 
-- Create a pipenv-managed virtual environment and install the latest version of your package installed：https://test.pypi.org/project/piglatin/1.0.3/ (Note that if you've previously created a pipenv virtual environment in the same directory, you may have to delete the old one first. Find out where it is located with the pipenv --venv command.)
+- Create a pipenv-managed virtual environment and install the latest version of your package installed：https://pypi.org/project/piglatinTeam7/1.0.3/ (Note that if you've previously created a pipenv virtual environment in the same directory, you may have to delete the old one first. Find out where it is located with the pipenv --venv command.)
 - Activate the virtual environment: pipenv shell.
-- Create a Python program file that imports your package and uses it, e.g. from piglatin import pig and then print(pig.toPL("Hello World")).
+- Create a Python program file that imports your package and uses it, e.g. from piglatinTeam7 import pig and then print(pig.toPL("Hello World")).
 - Run the program: python3 my_program_filename.py.
 - Exit the virtual environment: exit.
 
@@ -66,9 +66,9 @@ We believe that the functions most useful to potential users are (with their use
 - Clone the repo
 - Install pipenv, build, and twine if not already installed.
 - Add settings in pyproject.toml suitable for a setuptools-based build and add metadata fields to this file (our package do not requires any additional package apart from pytest for testing)
-- Include your code in src/piglatin/pig.py
+- Include your code in src/piglatinTeam7/pig.py
 - Build the project by running python -m build from the same directory where the pyproject.toml file is located.
-- Verify that the built .tar archive has the files you expect your package to have (including any important non-code files) by running the command: tar --list -f dist/piglatin-1.0.1.tar.gz, where piglatin-1.0.1 is replaced the new version.
+- Verify that the built .tar archive has the files you expect your package to have (including any important non-code files) by running the command: tar --list -f dist/piglatinTeam7-1.0.1.tar.gz, where piglatinTeam7-1.0.1 is replaced the new version.
 - Create an account on TestPyPI where one can upload to a test repository instead of the production PyPI repo.
 - Create a new API token on TestPyPI with the "Scope" set to “Entire account”. Save a copy of the token somewhere safe.
 - Upload your package to the TestPyPI repository using twine, e.g. twine upload -r testpypi dist/*

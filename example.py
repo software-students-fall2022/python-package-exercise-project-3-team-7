@@ -1,4 +1,4 @@
-from piglatin import pig
+from piglatinTeam7 import pig
 
 #Converting English to PigLatin
 print(pig.toPL("hello"))
