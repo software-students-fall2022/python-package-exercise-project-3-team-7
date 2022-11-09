@@ -135,8 +135,8 @@ def print_pig():
     return result
 
 
-def print_everything():
-    result = speech_bubble("Hello, my name is Foo. I am a great person.") + "\n"
+def print_everything(message):
+    result = speech_bubble(message) + "\n"
     result += arrow_to_bubble() + "\n"
     result += print_pig()
 
